@@ -27,12 +27,17 @@ The desktop application designed in PyGame functions as a visualizer to plot the
          
 ## Creators
 
-Contributors names and contact info
-
-ex. Dominique Pizzie  
-ex. [@DomPizzie](https://twitter.com/dompizzie)
+Humza Al Iqbal  
+email: 
+Hamza Mehmood
+email: 
+Akash Santhanakrishnan
+email: 
+Chanuth Weeraratna 
+email: 
 
 ## Refrences
 
-*write here*
+[Plane body](https://www.rcpano.net/2019/11/05/how-to-make-rc-model-airplane-fun-fly-style-diy-rc-airplane-with-brushless-motor/)
+
 
