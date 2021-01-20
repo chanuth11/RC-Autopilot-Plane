@@ -6,8 +6,10 @@ Why we are doing this project: [Project Overview](https://docs.google.com/docume
 
 ### Hardware
 
-*write here 
-add images/videos*
+|                     | Transmitter Components | Receiver Components |
+| ------------------- | ---------------------- | ------------------- |
+| Soldered Components |  | <ul><li>nRF24L01 Breakout Adapter</li><li>Power MB V2 Voltage</li><li>Regulator/Power Supply</li><li>Arduino Nano iot 33</li><li>Servos x 4</li><li>Motor driver</li><li>PCB</li></ul> |
+| Connected Components | <ul><li>Arduino UNO</li><li>nRF24L01 Breakout Adapter</li><li>nRF24L01 + PA transmitter</li></ul> | <ul><li>nRF24L01 + PA receiver to nRF24L01 Breakout Adapter</li><li>Connected 3.7 drone dc motors x 2 to motor driver</li><li>Connected 7.4V 5200mah LIPO battery to Power MB V2</li></ul> |
 
 ### Software
 
