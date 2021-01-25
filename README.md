@@ -28,13 +28,13 @@ The desktop application designed in PyGame functions as a visualizer to plot the
 ## Creators
 
 Humza Al Iqbal   
-email:  
+email: humzaaiqbal67@gmail.com
 Hamza Mehmood  
 email:  
 Akash Santhanakrishnan:  
-email:  
+email: akashkrish27@gmail.com
 Chanuth Weeraratna  
-email:  
+email: chanuthw55@gmail.com 
 
 ## Refrences
 
