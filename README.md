@@ -4,6 +4,8 @@ Why we are doing this project: [Project Overview](https://docs.google.com/docume
 
 ## Current Progress
 
+Video: https://youtu.be/5ENRhkCHxzM
+
 ### Hardware
 
 |                     | Transmitter Components | Receiver Components |
