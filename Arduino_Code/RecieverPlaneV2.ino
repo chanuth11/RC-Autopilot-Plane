@@ -126,4 +126,4 @@ void loop(){
   
 }
 
-//fix motor running and make this shit work with servos
+//fix motor running and make this work with servos
