@@ -6,7 +6,7 @@ import serial
 # Arduino Setup
 
 
-arduinoData = serial.Serial('com3', 9600)
+arduinoData = serial.Serial('com8', 9600)
 
 
 def led_on():
@@ -16,6 +16,8 @@ def led_on():
 def led_of():
     arduinoData.write(str.encode('0'))
 
+def motor(value):
+    arduinoData.write(str.encode(value))
 
 def servo(value):
     arduinoData.write(str.encode(value))
@@ -40,7 +42,7 @@ with open(os.path.join("ps4keys.json"), "r+") as file:
 
 # 0: Left-analog Horz 1: Left-analog Vertical 2: Right-analog Horz
 # 3: Right-analog Vertical 4: Left Trigger 5: Right Trigger
-analog_keys = {0: 0, 1: 0, 3: 0, 4: -1, 5: 1}
+analog_keys = {0: 0, 1: 0, 2: 0, 3: 0, 4: -1, 5: 1}
 
 # Player
 playerImg = pygame.image.load("spaceship.png")
@@ -86,6 +88,7 @@ while running:
             # Horizontal Left Analog
             analog_keys[event.axis] = event.value
             if (abs(analog_keys[0])) > 0:
+
                 if analog_keys[0] < -.1:
                     x = int(round(analog_keys[0], 2) * 100)
                     servo_output = ' '
@@ -107,85 +110,142 @@ while running:
                         servo_output = '8'
                     elif x < -10:
                         servo_output = '9'
-                    # elif x < -60:
-                    #     servo_output = '6'
-                    # elif x < -70:
-                    #     servo_output = '7'
-                    # elif x < -80:
-                    #     output = '8'
-                    # elif x < -90:
-                    #     servo_output = '9'
-                    # print(servo_output)
                     servo(servo_output)
                 if analog_keys[0] > 0.1:
                     x = int(round(analog_keys[0], 2) * 100)
-                    print(x)
                     servo_output = ' '
                     if x > 90:
-                        servo_output = 'A'
+                        servo_output = 'J'
                     elif x > 80:
-                        servo_output = 'B'
+                        servo_output = 'K'
                     elif x > 70:
-                        servo_output = 'C'
+                        servo_output = 'L'
                     elif x > 60:
-                        servo_output = 'D'
+                        servo_output = 'M'
                     elif x > 50:
-                        servo_output = 'E'
+                        servo_output = 'N'
                     elif x > 40:
-                        servo_output = 'F'
+                        servo_output = 'O'
 
-
-
-                    # print(servo_outputVert)
                     servo(servo_output)
-            # Vertical Analog
-            if (abs(analog_keys[1])) > .4:
-                if analog_keys[1] < -.7:
-                    playerY_change = -0.1
-                    print("Up")
-                else:
-                    playerY_change = 0
-                if analog_keys[1] > .7:
-                    playerY_change = 0.1
-                    print("Down")
-                else:
-                    playerY_change = 0
+            # Vertical Left Analog - Elevator
+            if (abs(analog_keys[1])) > 0.1:
+                if analog_keys[1] < -.1:
+                    x = int(round(analog_keys[1], 2) * 100)
+                    servo_output = ' '
+                    if x < -90:
+                        servo_output = 'Q'
+                    elif x < -80:
+                        servo_output = 'R'
+                    elif x < -70:
+                        servo_output = 'S'
+                    elif x < -60:
+                        servo_output = 'T'
+                    elif x < -50:
+                        servo_output = 'U'
+                    elif x < -40:
+                        servo_output = 'V'
+                    elif x < -30:
+                        servo_output = 'W'
+                    elif x < -20:
+                        servo_output = 'X'
+                    servo(servo_output)
+                    print(servo_output)
+                if analog_keys[1] > 0.1:
+                    x = int(round(analog_keys[1], 2) * 100)
+                    servo_output = ' '
+                    if x > 90:
+                        servo_output = 'Y'
+                    elif x > 80:
+                        servo_output = 'Z'
+                    elif x > 70:
+                        servo_output = ','
+                    elif x > 60:
+                        servo_output = ';'
+                    elif x > 50:
+                        servo_output = '{'
+                    elif x > 40:
+                        servo_output = '}'
+                    servo(servo_output)
+                    print(servo_output)
+            elif (abs(analog_keys[1])) < 0.1:
+                output = '='
+                motor(output)
+                # Horizontal Right Analog - Rudder
+            if (abs(analog_keys[3])) > 0.1:
+
+                if analog_keys[3] < -.1:
+                    x = int(round(analog_keys[3], 2) * 100)
+                    servo_output = ' '
+                    if x < -90:
+                        servo_output = '!'
+                    elif x < -80:
+                        servo_output = '@'
+                    elif x < -70:
+                        servo_output = '#'
+                    elif x < -60:
+                        servo_output = '$'
+                    elif x < -50:
+                        servo_output = '%'
+                    elif x < -40:
+                        servo_output = '^'
+                    elif x < -30:
+                        servo_output = '&'
+                    elif x < -20:
+                        servo_output = '*'
+                    elif x < -10:
+                        servo_output = '('
+                    servo(servo_output)
+                    print(servo_output)
+                if analog_keys[3] > 0.1:
+                    x = int(round(analog_keys[3], 2) * 100)
+                    servo_output = ' '
+                    if x > 90:
+                        servo_output = ')'
+                    elif x > 80:
+                        servo_output = '-'
+                    elif x > 70:
+                        servo_output = '+'
+                    elif x > 60:
+                        servo_output = '/'
+                    elif x > 50:
+                        servo_output = '['
+                    elif x > 40:
+                        servo_output = ']'
+                    servo(servo_output)
+                    print(servo_output)
+            elif (abs(analog_keys[3])) < 0.1:
+                output = 'z'
+                servo(output)
+
+            # Right Trigger - Motor
             if analog_keys[5] > 0:
                 x = int(round(analog_keys[5], 2) * 100)
                 output = ' '
-                if x > 6:
-                    output = '1'
-                if x > 12:
-                    output = '2'
-                if x > 18:
-                    output = '3'
-                if x > 24:
-                    output = '4'
-                if x > 30:
-                    output = '5'
-                if x > 36:
-                    output = '6'
-                if x > 48:
-                    output = '7'
-                if x > 54:
-                    output = '8'
-                if x > 60:
-                    output = '9'
-                if x > 66:
+                if x > 10:
+                    output = '0'
+                if x > 20:
                     output = 'A'
-                if x > 72:
+                if x > 30:
                     output = 'B'
-                if x > 78:
+                if x > 40:
                     output = 'C'
-                if x > 83:
+                if x > 50:
                     output = 'D'
-                if x > 87:
+                if x > 60:
                     output = 'E'
-                if x > 91:
+                if x > 70:
                     output = 'F'
-                if x > 95:
+                if x > 80:
                     output = 'G'
-                servo(output)
+                if x > 90:
+                    output = 'H'
+                if x > 95:
+                    output = 'I'
+                motor(output)
+            elif analog_keys[5] < 0:
+                output = 'P'
+                motor(output)
 
     playerX += playerX_change
     playerY += playerY_change
