@@ -8,9 +8,10 @@ Why we are doing this project: [Project Overview](https://docs.google.com/docume
 
 April 4th - Attaching all components (servos, motor, nano arduino, gps) to the plane
 
-# Issues
+## Issues
 * servos connected to the ailerons move sporadically
 * current method of sending controller input is inconsistent when connected to radio transceiver
+
 **Video progress:** https://www.dropbox.com/s/yyk6viig68fn5ld/stuff%20attached.mp4?dl=0
 
 ### Hardware
