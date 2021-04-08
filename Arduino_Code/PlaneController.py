@@ -111,6 +111,7 @@ while running:
                     elif x < -10:
                         servo_output = '9'
                     servo(servo_output)
+                    print(output)
                 if analog_keys[0] > 0.1:
                     x = int(round(analog_keys[0], 2) * 100)
                     servo_output = ' '
@@ -128,7 +129,9 @@ while running:
                         servo_output = 'O'
 
                     servo(servo_output)
+                    print(output)
             # Vertical Left Analog - Elevator
+
             if (abs(analog_keys[1])) > 0.1:
                 if analog_keys[1] < -.1:
                     x = int(round(analog_keys[1], 2) * 100)
@@ -171,6 +174,7 @@ while running:
             elif (abs(analog_keys[1])) < 0.1:
                 output = '='
                 motor(output)
+                print(output)
                 # Horizontal Right Analog - Rudder
             if (abs(analog_keys[3])) > 0.1:
 
@@ -217,7 +221,7 @@ while running:
             elif (abs(analog_keys[3])) < 0.1:
                 output = 'z'
                 servo(output)
-
+                print(output)
             # Right Trigger - Motor
             if analog_keys[5] > 0:
                 x = int(round(analog_keys[5], 2) * 100)
@@ -243,9 +247,11 @@ while running:
                 if x > 95:
                     output = 'I'
                 motor(output)
+                print(output)
             elif analog_keys[5] < 0:
                 output = 'P'
                 motor(output)
+                print(output)
 
     playerX += playerX_change
     playerY += playerY_change
