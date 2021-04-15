@@ -14,6 +14,7 @@ April 8th - All parts attached, working on radio transeiver
 * **Video progress 2:** https://www.dropbox.com/s/g05b8mm7rp9n7kx/Parts%20Attached.m4v?dl=0
 
 April 15th - Connected all parts with transmitter and reciever, optimizing code
+* updated previous controller code
 * 4 servos and motor work through radio transeiver
 * fixing the one second delay for ps4 input 
 
