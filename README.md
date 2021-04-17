@@ -17,7 +17,7 @@ April 15th - Connected all parts with transmitter and reciever, optimizing code
 * updated previous controller code
 * 4 servos and motor work through radio transeiver
 * fixing the delay for ps4 input, testing if plane can fly
-* **Video progress 2:** https://www.dropbox.com/s/d80c9lt07tbj9sr/radio_transmission.mp4?dl=0
+* **Video progress 3:** https://www.dropbox.com/s/d80c9lt07tbj9sr/radio_transmission.mp4?dl=0
 
 ### Hardware
 
