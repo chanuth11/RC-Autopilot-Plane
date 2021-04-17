@@ -5,15 +5,15 @@ Why we are doing this project: [Project Overview](https://docs.google.com/docume
 ## Current Progress
 **Video demonstration:** https://youtu.be/5ENRhkCHxzM
 
-April 4th - Attaching all components (servos, motor, nano arduino, gps) to the plane
+April 4th -> Attaching all components (servos, motor, nano arduino, gps) to the plane
 * servos connected to the ailerons move sporadically
 * current method of sending controller input is inconsistent when connected to radio transceiver
 * **Video progress 1:** https://www.dropbox.com/s/yyk6viig68fn5ld/stuff%20attached.mp4?dl=0
 
-April 8th - All parts attached, working on radio transeiver 
+April 8th -> All parts attached, working on radio transeiver 
 * **Video progress 2:** https://www.dropbox.com/s/g05b8mm7rp9n7kx/Parts%20Attached.m4v?dl=0
 
-April 15th - Connected all parts with transmitter and reciever, optimizing code
+April 15-16th -> Connected all parts with transmitter and reciever, optimizing code
 * updated previous controller code
 * 4 servos and motor work through radio transeiver
 * fixing the delay for ps4 input, testing if plane can fly
