@@ -26,6 +26,9 @@ April 15-16th -> Connected all parts with transmitter and reciever, optimizing c
 | Soldered Components |  | <ul><li>nRF24L01 Breakout Adapter</li><li>Power MB V2 Voltage</li><li>Regulator/Power Supply</li><li>Arduino Nano iot 33</li><li>Servos x 4</li><li>Motor driver</li><li>PCB</li></ul> |
 | Connected Components | <ul><li>Arduino UNO</li><li>nRF24L01 Breakout Adapter</li><li>nRF24L01 + PA transmitter</li></ul> | <ul><li>nRF24L01 + PA receiver to nRF24L01 Breakout Adapter</li><li>Connected 3.7 drone dc motors x 2 to motor driver</li><li>Connected 7.4V 5200mah LIPO battery to Power MB V2</li></ul> |
 
+ **Receiver Schematic**
+![receiver schematic](https://user-images.githubusercontent.com/57009205/115151764-533e3600-a03c-11eb-8dd1-f1ec7b6fffcc.png)
+
 ### Software
 
 ![plane](https://user-images.githubusercontent.com/57009205/105204286-04066900-5b12-11eb-8547-1b9bb6df8277.PNG)
