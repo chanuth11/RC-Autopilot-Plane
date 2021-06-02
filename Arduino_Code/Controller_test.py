@@ -6,7 +6,7 @@ import time
 # Arduino Setup
 
 
-arduinoData = serial.Serial('com3', 9600)
+arduinoData = serial.Serial('com5', 9600)
 
 
 def led_on():
@@ -84,12 +84,9 @@ while running:
 
         if event.type == pygame.JOYAXISMOTION:
 
-            HLA1 = "00"
-            HLA2 = "00"
-            VLA1 = "00"
-            VLA2 = "00"
-            HRA1 = "00"
-            HRA2 = "00"
+            HLA = "00"
+            VLA = "00"
+            HRA = "00"
             RT = "00"
 
             analog_keys[event.axis] = event.value
@@ -97,43 +94,49 @@ while running:
             # Horizontal Left Analog - Ailerons
             if (abs(analog_keys[0])) > 0:
                 if analog_keys[0] < -.1:
-                    HLA1 = int(round(analog_keys[0], 2) * -100)
-                    if HLA1 > 99:
-                        HLA1 = 99
+                    HLA = int(round(analog_keys[0], 2) * -10)
+                    if HLA > 9:
+                        HLA = 9
+                    HLA = "0" + str(HLA)
                 if analog_keys[0] > 0.1:
-                    HLA2 = int(round(analog_keys[0], 2) * 100)
-                    if HLA2 > 99:
-                        HLA2 = 99
+                    HLA = int(round(analog_keys[0], 2) * 10) + 10
+                    if HLA > 19:
+                        HLA = 19
+                    HLA = str(HLA)
             # Vertical Left Analog - Elevator
             if (abs(analog_keys[1])) > 0.1:
                 if analog_keys[1] < -.1:
-                    VLA1 = int(round(analog_keys[1], 2) * -100)
-                    if VLA1 > 99:
-                        VLA1 = 99
+                    VLA = int(round(analog_keys[1], 2) * -10)
+                    if VLA > 9:
+                        VLA = 9
+                    VLA = "0" + str(VLA)
                 if analog_keys[1] > 0.1:
-                    VLA2 = int(round(analog_keys[1], 2) * 100)
-                    if VLA2 > 99:
-                        VLA2 = 99
-            # Horz Right Analog - Rutter
+                    VLA = int(round(analog_keys[1], 2) * 10) + 10
+                    if VLA > 19:
+                        VLA = 19
+                    VLA = str(VLA)
+            # Horz Right Analog - Rutter`
             if (abs(analog_keys[2])) > 0.1:
                 if analog_keys[2] < -.1:
-                    HRA1 = int(round(analog_keys[2], 2) * -100)
-                    if HRA1 > 99:
-                        HRA1 = 99
+                    HRA = int(round(analog_keys[2], 2) * -10)
+                    if HRA > 9:
+                        HRA = 9
+                    HRA = "0" + str(HRA)
                 if analog_keys[2] > 0.1:
-                    HRA2 = int(round(analog_keys[2], 2) * 100)
-                    if HRA2 > 99:
-                        HRA2 = 99
+                    HRA = int(round(analog_keys[2], 2) * 10) + 10
+                    if HRA > 19:
+                        HRA = 19
+                    HRA = str(HRA)
             # Right Trigger - DC Motor
             if analog_keys[5] > 0:
                 RT = int(round(analog_keys[5], 2) * 100)
                 if RT > 99:
                     RT = 99
+                RT = str(RT)
 
-            value = str(HLA1) + str(HLA2) + str(VLA1) + str(VLA2) + str(HRA1) + str(HRA2) + str(RT)
-            print(value)
+            value = HLA + VLA + HRA + RT
             output(value)
-
+            print(value)
     playerX += playerX_change
     playerY += playerY_change
     player(playerX, playerY)
