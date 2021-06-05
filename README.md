@@ -18,6 +18,7 @@ April 15-16th -> Connected all parts with transmitter and reciever, optimizing c
 * 4 servos and motor work through radio transeiver
 * fixing the delay for ps4 input, testing if plane can fly
 * **Video progress 3:** https://www.dropbox.com/s/d80c9lt07tbj9sr/radio_transmission.mp4?dl=0
+* Code works on both Windows and Mac Systems 
 
 ### Hardware
 
