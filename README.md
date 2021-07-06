@@ -20,6 +20,10 @@ April 15-16th -> Connected all parts with transmitter and reciever, optimizing c
 * **Video progress 3:** https://www.dropbox.com/s/d80c9lt07tbj9sr/radio_transmission.mp4?dl=0
 * Code works on both Windows and Mac Systems 
 
+July 7th
+* worked on physics for algorithms
+* first test flight
+
 ### Hardware
 
 |                     | Transmitter Components | Receiver Components |
