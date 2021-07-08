@@ -377,18 +377,18 @@ while runner:
                         HRA = 19
                     HRA = str(HRA)
             # Right Trigger - DC Motor
-                if -1 <= analog_keys[4] < 0:
-                    RT = int(round(analog_keys[4], 2) * -10)
-                    print(RT)
-                    if RT > 9:
-                        RT = 9
-                    RT = str(RT)
-                if 0 < analog_keys[4] <= 1:
-                    RT = int(round(analog_keys[4], 2)*10) + 10
-                    if RT > 19:
-                        RT = 19
-                    print(RT)
-                    RT = str(RT)
+            if -1 <= analog_keys[4] < 0:
+               RT = int(round(analog_keys[4], 2) * -10)
+               print(RT)
+               if RT > 9:
+                  RT = 9
+               RT = str(RT)
+            if 0 < analog_keys[4] <= 1:
+               RT = int(round(analog_keys[4], 2)*10) + 10
+               if RT > 19:
+                  RT = 19
+               print(RT)
+               RT = str(RT)    
 
             value = HLA + VLA + HRA + RT
             print(value)
