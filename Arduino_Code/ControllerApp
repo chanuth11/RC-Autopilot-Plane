@@ -377,6 +377,8 @@ while runner:
                         HRA = 19
                     HRA = str(HRA)
             # Right Trigger - DC Motor
+	    
+	    # analog_keys[4] is left trigger for Windows and right trigger for the Mac
             if -1 <= analog_keys[4] < 0:
                RT = int(round(analog_keys[4], 2) * -10)
                print(RT)
