@@ -2,7 +2,12 @@ import math
 import time
 PI = math.pi
 import pygame
-import serial
+work_version = False
+
+
+
+if (work_version == True):
+    import serial
 
 def int_finder(alpha, pos_x, pos_y):
     font = pygame.font.Font('freesansbold.ttf', 20)
@@ -84,16 +89,16 @@ pygame.init()
 screen = pygame.display.set_mode((760, 575))
 
 pygame.display.set_caption("Plane Visualizer")
-icon = pygame.image.load('globe.png')
+icon = pygame.image.load(r'C:\Users\hamza\OneDrive\Documents\RC-Autopilot-Plane-main\RC-Autopilot-Plane-main\PLANEAPP\globe.png')
 pygame.display.set_icon(icon)
 
-logo = pygame.image.load('logo.png')
+logo = pygame.image.load(r'C:\Users\hamza\OneDrive\Documents\RC-Autopilot-Plane-main\RC-Autopilot-Plane-main\PLANEAPP\logo.png')
 logo = pygame.transform.scale(logo, (140,120))
 
-b2 = pygame.image.load('b2.png')
+b2 = pygame.image.load(r'C:\Users\hamza\OneDrive\Documents\RC-Autopilot-Plane-main\RC-Autopilot-Plane-main\PLANEAPP\b2.png')
 b2 = pygame.transform.scale(b2, (760, 600))
 
-plane_art = pygame.image.load('plane.png')
+plane_art = pygame.image.load(r'C:\Users\hamza\OneDrive\Documents\RC-Autopilot-Plane-main\RC-Autopilot-Plane-main\PLANEAPP\plane.png')
 plane_art = pygame.transform.scale(plane_art, (30, 30))
 
 # trajectory_list
@@ -135,39 +140,45 @@ for x in range(len(beta)):
     alpha.append(beta)
 
 #before reading current location, get user input of destination
-lat1 = float(input("enter lat value"))
-lon1 = float(input("enter lon value"))
+if work_version == True:
+    lat1 = float(input("enter lat value"))
+    lon1 = float(input("enter lon value"))
 
 #connecting serial to python
-ser = serial.Serial('COM3', baudrate=9600, timeout=1)
+    ser = serial.Serial('COM3', baudrate=9600, timeout=1)
 
 # read serial output and store in variable
-arduinoData = ser.readline()
-string = arduinoData.decode()
-string = string.replace('\r', '')
-string = string.rstrip()
 
-while string == "":
-
-    # find gps signal before runnning app
-    print("waiting for gps signal")
+if (work_version == True):
     arduinoData = ser.readline()
     string = arduinoData.decode()
     string = string.replace('\r', '')
     string = string.rstrip()
 
+
+
+if work_version == True:
+    while string == "":
+
+    # find gps signal before runnning app
+        print("waiting for gps signal")
+        arduinoData = ser.readline()
+        string = arduinoData.decode()
+        string = string.replace('\r', '')
+        string = string.rstrip()
+
 #game_loop
 runner = True
 while runner:
+    if (work_version == True):
+        values = recieve_input(string)
 
-    values = recieve_input(string)
+        entry = calcDist(lat1, lon1, values[0], values[1])#putx,y values and dest x y values
 
-    entry = calcDist(lat1, lon1, values[0], values[1])#putx,y values and dest x y values
-
-    x_pos = entry[0]
-    y_pos = entry[1]
-    bearing = entry[2]
-    dis_remain = entry[3]
+        x_pos = entry[0]
+        y_pos = entry[1]
+        bearing = entry[2]
+        dis_remain = entry[3]
 
     t1 = time.time()
     time_elapsed = t1 - t0
@@ -201,8 +212,9 @@ while runner:
 
     pygame.draw.line(screen, 'black', (10, 267), (510, 267), 2)
 
-    plane_rot = plane_rotation(bearing, rotation)
-    screen.blit(plane_rot, (center_x+(x_pos*scale), (center_y-(y_pos*scale))))
+    if (work_version == True):
+        plane_rot = plane_rotation(bearing, rotation)
+        screen.blit(plane_rot, (center_x+(x_pos*scale), (center_y-(y_pos*scale))))
 
     # screen.blit(logo, (560,357))
 
@@ -210,6 +222,7 @@ while runner:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             runner = False
+            
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_r:
                 checker = 0
@@ -237,26 +250,29 @@ while runner:
 
     display_stat("Distance Traveled:", a, 110)
     display_stat(distance_traveled, b, 110)
-
-    display_stat("Distance Remaining:", a, 150)
-    display_stat(dis_remain, b, 150)
-
+    
     display_stat("Altitude:", a, 190)
     display_stat(altitude, b, 190)
 
-    display_stat("Bearing Angle:", a, 230)
-    display_stat(bearing, b, 230)
+
+    if work_version == True: 
+        display_stat("Distance Remaining:", a, 150)
+        display_stat(dis_remain, b, 150)
+
+        display_stat("Bearing Angle:", a, 230)
+        display_stat(bearing, b, 230)
 
     # prints trajectory. Stores coordinates for trajectory on line 135
     print_trajectory(trajectory)
 
     # change in position
-    temp = recieve_input(string)  # last values of long and lat in the file
+    #temp = recieve_input(string)  # last values of long and lat in the file
     # temp_list = position(temp[0], temp[1])
 
-    if int(t1 - t0) == checker:
-        checker += 3
-        temp = [int(x_pos), int(y_pos)]
-        trajectory.append(temp)
+    
+    # if int(t1 - t0) == checker:
+    #     checker += 3
+    #     temp = [int(x_pos), int(y_pos)]
+    #     trajectory.append(temp)
 
     pygame.display.update()
