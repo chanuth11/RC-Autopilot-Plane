@@ -392,6 +392,6 @@ while runner:
 
             value = HLA + VLA + HRA + RT
             print(value)
-	          servo(value)
+	    servo(value)
 
     pygame.display.update()
