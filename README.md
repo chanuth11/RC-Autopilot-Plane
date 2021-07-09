@@ -20,9 +20,12 @@ April 15-16th -> Connected all parts with transmitter and reciever, optimizing c
 * **Video progress 3:** https://www.dropbox.com/s/d80c9lt07tbj9sr/radio_transmission.mp4?dl=0
 * Code works on both Windows and Mac Systems 
 
-July 7th
-* worked on physics for algorithms
-* first test flight
+July 7th -> Testing prototype 1 and working on Autopilot
+* first test flight failed due to unstable components, lack of motor control, and poor support
+* building 2nd prototype with enhanced wood support and better materials
+* worked on physics for algorithms, and created formulas to calculate velocity, etc.
+* motor control is stablized
+* working on integrating controller code with plane app
 
 ### Hardware
 
