@@ -1,9 +1,12 @@
 import math
 import time
 PI = math.pi
+
+#Main Library 
 import pygame
+
+#To enable arduino 
 work_version = False
-import pygame
 import json
 import os
 import time
@@ -101,6 +104,8 @@ pygame.init()
 
 # images and caption
 screen = pygame.display.set_mode((760, 575))
+
+# These file paths will vary depeneding on where the images are downloaded
 
 pygame.display.set_caption("Plane Visualizer")
 icon = pygame.image.load(r'C:\Users\hamza\OneDrive\Documents\RC-Autopilot-Plane-main\RC-Autopilot-Plane-main\PLANEAPP\globe.png')
@@ -288,7 +293,9 @@ while runner:
     #     checker += 3
     #     temp = [int(x_pos), int(y_pos)]
     #     trajectory.append(temp)
-
+	
+	
+    # Intializating Controller	
     joysticks = []
     for i in range(pygame.joystick.get_count()):
         joysticks.append(pygame.joystick.Joystick(i))
@@ -309,10 +316,14 @@ while runner:
     playerY = 480
     playerX_change = 0
     playerY_change = 0
+
+    # Gaining PS4 Controller access	
      
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
+	
+	#PS4 Buttons
         if event.type == pygame.JOYBUTTONDOWN:
             if event.button == button_keys['x']:
                 print("\nx")
@@ -332,8 +343,8 @@ while runner:
                 # print("two")
 
         if event.type == pygame.JOYAXISMOTION:
-
-            HLA = "00"
+	    # Intitializing Controller values 	
+            HLA = "00" 
             VLA = "00"
             HRA = "00"
             RT = "00"
@@ -352,6 +363,7 @@ while runner:
                     if HLA > 19:
                         HLA = 19
                     HLA = str(HLA)
+		
             # Vertical Left Analog - Elevator
             if (abs(analog_keys[1])) > 0.1:
                 if analog_keys[1] < -.1:
@@ -364,6 +376,7 @@ while runner:
                     if VLA > 19:
                         VLA = 19
                     VLA = str(VLA)
+		
             # Horz Right Analog - Rutter`
             if (abs(analog_keys[2])) > 0.1:
                 if analog_keys[2] < -.1:
@@ -376,6 +389,7 @@ while runner:
                     if HRA > 19:
                         HRA = 19
                     HRA = str(HRA)
+		
             # Right Trigger - DC Motor
 	    
 	    # analog_keys[4] is left trigger for Windows and right trigger for the Mac
@@ -390,8 +404,9 @@ while runner:
                if RT > 19:
                   RT = 19
                print(RT)
-               RT = str(RT)    
-
+               RT = str(RT)  
+	    
+	    # Final output 
             value = HLA + VLA + HRA + RT
             print(value)
 	    servo(value)
