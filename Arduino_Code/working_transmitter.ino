@@ -101,7 +101,7 @@ void loop() {
       byte val4 = ((byte(recievedData[6]))-48)*10 + ((byte(recievedData[7]))-48);
 
       if (val4 <= 9) {
-        Data.HRA = map(val4, 0, 9, 0, 50); 
+        Data.HRA = map(val4, 9, 0, 0, 50); 
       }
       else{
         Data.HRA = map(val4, 11, 19, 50, 100); 
