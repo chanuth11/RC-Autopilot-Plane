@@ -384,7 +384,7 @@ while runner:
                print(RT)
                if RT > 9:
                   RT = 9
-               RT = str(RT)
+               RT = "0" + str(RT)
             if 0 < analog_keys[4] <= 1:
                RT = int(round(analog_keys[4], 2)*10) + 10
                if RT > 19:
