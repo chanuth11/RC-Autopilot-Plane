@@ -24,7 +24,7 @@ July 7th -> Testing prototype 1 and working on Autopilot
 * first test flight failed due to unstable components, lack of motor control, and poor support
 * building 2nd prototype with enhanced wood support and better materials
 * worked on physics for algorithms, and created formulas to calculate velocity, etc.
-* motor control is stablized
+* motor control is stabilized
 * working on integrating controller code with plane app
 
 ### Hardware
