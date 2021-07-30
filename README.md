@@ -37,7 +37,7 @@ July 7th -> Testing prototype 1 and working on Autopilot
  **Receiver Schematic**
 ![receiver schematic](https://user-images.githubusercontent.com/57009205/115151764-533e3600-a03c-11eb-8dd1-f1ec7b6fffcc.png)
 
-**New Wing Design**
+ **New Wing Design**
 ![newdesign](https://user-images.githubusercontent.com/57009205/127687287-eb4fee48-6a85-4cea-a978-d29f71f33d39.png)
 
 ### Software
