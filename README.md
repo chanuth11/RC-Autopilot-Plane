@@ -2,30 +2,9 @@
 
 Why we are doing this project: [Project Overview](https://docs.google.com/document/d/1GXb-hj0h31oRvuv6bn0ZbQ69HOYbUhehtujObRabfnY/edit?usp=sharing)
 
-## Current Progress
-**Video demonstration:** https://youtu.be/5ENRhkCHxzM
+## Current Progress: 
 
-April 4th -> Attaching all components (servos, motor, nano arduino, gps) to the plane
-* servos connected to the ailerons move sporadically
-* current method of sending controller input is inconsistent when connected to radio transceiver
-* **Video progress 1:** https://www.dropbox.com/s/yyk6viig68fn5ld/stuff%20attached.mp4?dl=0
-
-April 8th -> All parts attached, working on radio transeiver 
-* **Video progress 2:** https://www.dropbox.com/s/g05b8mm7rp9n7kx/Parts%20Attached.m4v?dl=0
-
-April 15-16th -> Connected all parts with transmitter and reciever, optimizing code
-* updated previous controller code
-* 4 servos and motor work through radio transeiver
-* fixing the delay for ps4 input, testing if plane can fly
-* **Video progress 3:** https://www.dropbox.com/s/d80c9lt07tbj9sr/radio_transmission.mp4?dl=0
-* Code works on both Windows and Mac Systems 
-
-July 7th -> Testing prototype 1 and working on Autopilot
-* first test flight failed due to unstable components, lack of motor control, and poor support
-* building 2nd prototype with enhanced wood support and better materials
-* worked on physics for algorithms, and created formulas to calculate velocity, etc.
-* motor control is stabilized
-* working on integrating controller code with plane app
+https://docs.google.com/document/d/124PLKt3WayUlCQaWhQOHeGj22U9F4H3z6Gp6ViLzv4w/edit?usp=sharing
 
 ### Hardware
 
@@ -38,6 +17,7 @@ July 7th -> Testing prototype 1 and working on Autopilot
 ![receiver schematic](https://user-images.githubusercontent.com/57009205/115151764-533e3600-a03c-11eb-8dd1-f1ec7b6fffcc.png)
 
  **New Wing Design**
+ 
 ![newdesign](https://user-images.githubusercontent.com/57009205/127687287-eb4fee48-6a85-4cea-a978-d29f71f33d39.png)
 
 ### Software
