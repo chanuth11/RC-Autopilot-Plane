@@ -37,9 +37,12 @@ July 7th -> Testing prototype 1 and working on Autopilot
  **Receiver Schematic**
 ![receiver schematic](https://user-images.githubusercontent.com/57009205/115151764-533e3600-a03c-11eb-8dd1-f1ec7b6fffcc.png)
 
+**New Wing Design**
+![newdesign](https://user-images.githubusercontent.com/57009205/127687287-eb4fee48-6a85-4cea-a978-d29f71f33d39.png)
+
 ### Software
 
-![plane](https://user-images.githubusercontent.com/57009205/105204286-04066900-5b12-11eb-8547-1b9bb6df8277.PNG)
+**Current Application:** https://www.dropbox.com/s/v0275ro6g6j7pxt/Plane_Visualizer_2021-07-11_18-41-11.mp4?dl=0
 
 The desktop application designed in PyGame functions as a visualizer to plot the position of the plane relative to the position of the destination -> marked as an x a the origin. The scale is 250 m in each direction from the origin. Multiple stats are displayed on the application. Currently, the stats that are working are Time Elapsed and Bearing Angle. The other stats need functions to be calculated. The position of the plane updates every time a signal is received through a radio transmitter and is extracted from the serial on the Arduino console (updates in real-time with the physical plane). The symbol of the plane has dynamic turning. Depending on the bearing angle, the symbol rotates up to 360 degrees with multiples of 15 degrees to prevent image degradation. A meter animation at the bottom with dynamic colour changing (increases red value on the RGB scale depending on how full it's getting) has been built but needs to be implemented for values such as velocity.
 
