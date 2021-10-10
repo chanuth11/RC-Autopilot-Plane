@@ -6,6 +6,9 @@ Why we are doing this project: [Project Overview](https://docs.google.com/docume
 
 https://docs.google.com/document/d/124PLKt3WayUlCQaWhQOHeGj22U9F4H3z6Gp6ViLzv4w/edit?usp=sharing
 
+Plan for Winter Break: 
+https://docs.google.com/document/d/1lroXHf4Y8rhPDGnO8ytmJ74nIkBuzvZ1OpPVsnde-J4/edit?usp=sharing
+
 ### Hardware
 
 |                     | Transmitter Components | Receiver Components |
