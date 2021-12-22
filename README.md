@@ -4,10 +4,10 @@ Why we are doing this project: [Project Overview](https://docs.google.com/docume
 
 ## Videos and Current Progress: 
 
-https://docs.google.com/document/d/124PLKt3WayUlCQaWhQOHeGj22U9F4H3z6Gp6ViLzv4w/edit?usp=sharing
+Videos:
+https://youtube.com/playlist?list=PLy_OHsmgOxpecJcippoSOJ2Jgk2Bfz1kq
 
-Plan for Winter Break: 
-https://docs.google.com/document/d/1lroXHf4Y8rhPDGnO8ytmJ74nIkBuzvZ1OpPVsnde-J4/edit?usp=sharing
+Progress: https://docs.google.com/document/d/124PLKt3WayUlCQaWhQOHeGj22U9F4H3z6Gp6ViLzv4w/edit?usp=sharing
 
 ### Hardware
 
