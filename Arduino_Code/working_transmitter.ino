@@ -99,13 +99,8 @@ void loop() {
         Data.HRA = map(val3, 10, 19, 90, 180); 
       }    
       byte val4 = ((byte(recievedData[6]))-48)*10 + ((byte(recievedData[7]))-48);
-
-      if (val4 <= 9) {
-        Data.HRA = map(val4, 9, 0, 0, 50); 
-      }
-      else{
-        Data.HRA = map(val4, 11, 19, 50, 100); 
-      }  
+      
+        Data.RT = map(val4, 0, 19, 0, 255);
       
       Serial.setTimeout(myTimeout);
 
