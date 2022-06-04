@@ -6,11 +6,11 @@ import pygame
 import json
 import os
 import time
-#import serial
+import serial
 
-# def servo(servoValues):
-#     if controller_version:
-#         arduinoData.write(str.encode(servoValues))
+def servo(servoValues):
+    if controller_version:
+        arduinoData.write(str.encode(servoValues))
 
 
 def int_finder(emptyAlphwidth_one, pos_x, pos_y):
@@ -115,25 +115,37 @@ screen = pygame.display.set_mode((1500, 575))
 # These file paths will vary depeneding on where the images are downloaded
 
 pygame.display.set_caption("Plane Visualizer")
-icon = pygame.image.load(r'globe.png')
+icon = pygame.image.load(r'PLANEAPP/images/globe.png')
 pygame.display.set_icon(icon)
 
-logo = pygame.image.load(r'logo.png')
+logo = pygame.image.load(r'PLANEAPP/images/logo.png')
 logo = pygame.transform.scale(logo, (140, 120))
 
-b2 = pygame.image.load(r'b2.png')
+b2 = pygame.image.load(r'PLANEAPP/images/b2.png')
 b2 = pygame.transform.scale(b2, (760, 600))
 
-plane_art = pygame.image.load(r'plane.png')
+plane_art = pygame.image.load(r'PLANEAPP/images/plane.png')
 
-joy_button = pygame.image.load(r'joystick.png')
-joy_button = pygame.transform.scale(joy_button, (700, 500))
+joy_button = pygame.image.load(r'PLANEAPP/images/joystick.png')
+joy_button = pygame.transform.scale(joy_button, (1100, 600))
 
-Ps4 = pygame.image.load(r'Ps4_Controller.png')
-Ps4 = pygame.transform.scale(Ps4, (700, 500))
+Ps4 = pygame.image.load(r'PLANEAPP/images/Ps4_Controller.png')
+Ps4 = pygame.transform.scale(Ps4, (730, 400))
 
-trigger = pygame.image.load(r'trigger.png').convert()
+trigger = pygame.image.load(r'PLANEAPP/images/trigger.png').convert()
 trigger = pygame.transform.scale(trigger, (700, 500))
+
+x_button = pygame.image.load(r"PLANEAPP/images/x_button.png")
+x_button = pygame.transform.scale(x_button, (101, 101))
+
+circle_button = pygame.image.load(r"PLANEAPP/images/circle_button.png")
+circle_button = pygame.transform.scale(circle_button, (101, 101))
+
+triangle_button = pygame.image.load(r"PLANEAPP/images/triangle_button.png")
+triangle_button = pygame.transform.scale(triangle_button, (101, 101))
+
+square_button = pygame.image.load(r"PLANEAPP/images/square_button.png")
+square_button = pygame.transform.scale(square_button, (101, 101))
 
 # trajectory_list
 trajectory = []
@@ -217,7 +229,7 @@ for joystick in joysticks:
     joystick.init()
 
 # Reading in PS4 buttons
-with open(os.path.join("ps4_keys.json"), 'r+') as file:
+with open(os.path.join("PLANEAPP/ps4_keys.json"), 'r+') as file:
     button_keys = json.load(file)
 
 # 0: Left-analog Horz 1: Left-analog Vertical 2: Right-analog Horz
@@ -225,13 +237,17 @@ with open(os.path.join("ps4_keys.json"), 'r+') as file:
 analog_keys = {0: 0, 1: 0, 2: 0, 3: 0, 4: -1, 5: 1}
 
 # Player
-playerImg = pygame.image.load(r'globe.png')
+playerImg = pygame.image.load(r'PLANEAPP/images/globe.png')
 playerX = 370
 playerY = 480
 playerX_change = 0
 playerX_change = 0
 playerY_change = 0
+
 is_x = False
+is_circle = False
+is_triangle = False
+is_square = False
 
 #position
 width_one = 525
@@ -277,23 +293,40 @@ while runner:
             horizontal_left = int(HLA) - 10
         else: 
             horizontal_left = -int(HLA)
-        screen.blit(joy_button, (735 + horizontal_left,52 + vertical_left))
+        screen.blit(joy_button, (520 + horizontal_left,-57 + vertical_left))
 
     if int(HRA) >= 0:
         if int(HRA) > 10:
             horizontal_right = int(HRA) - 10
         else: 
             horizontal_right = -int(HRA)
-        screen.blit(joy_button, (865 + horizontal_right, 54))
+        screen.blit(joy_button, (680 + horizontal_right, -57))
     
     
 
     if is_x == True:                            
-        screen.blit(joy_button, (860, 20+10))
+        screen.blit(x_button, (1256, 130+10))
     else:
-        screen.blit(joy_button, (860, 20))
+        screen.blit(x_button, (1256, 130))
     is_x = False
 
+    if is_circle == True:                            
+        screen.blit(circle_button, (1258, 130+10))
+    else:
+        screen.blit(circle_button, (1258, 130))
+    is_circle = False
+
+    if is_triangle == True:                            
+        screen.blit(triangle_button, (1256, 130+10))
+    else:
+        screen.blit(triangle_button, (1256, 130))
+    is_triangle = False
+
+    if is_square == True:                            
+        screen.blit(square_button, (1254, 130+10))
+    else:
+        screen.blit(square_button, (1254, 130))
+    is_triangle = False
     #screen.blit(trigger, (865, 54))
     #trigger.fill((255, 255, 255, alpha))
 
@@ -372,14 +405,6 @@ while runner:
     #     checker += 3
     #     temp = [int(x_pos), int(y_pos)]
     #     trajectory.append(temp)
-    display_stat("Saftey Mode", width_one, 270)
-
-    if count % 2 == 1:
-        #add a heads up display saying in saftey mode
-        display_stat("ON", length, 270)
-    else:
-        display_stat("OFF", length, 270)
-
 
     # Gaining PS4 Controller access
 
@@ -388,7 +413,8 @@ while runner:
             running = False
         if event.type == pygame.JOYBUTTONDOWN:
             if event.button == button_keys['triangle']:
-                count += 1
+                is_triangle = True
+
         # PS4 Buttons
         if event.type == pygame.JOYBUTTONDOWN:
             if event.button == button_keys['x']:
@@ -406,9 +432,10 @@ while runner:
 
         if event.type == pygame.JOYBUTTONDOWN:
             if event.button == button_keys['circle']:
-                print("\ncircle")
-
-
+                is_circle = True
+        if event.type == pygame.JOYBUTTONDOWN:
+            if event.button == button_keys['square']:
+                is_square = True
 
         if event.type == pygame.JOYBUTTONUP:
             if event.button == button_keys['triangle']:
@@ -488,7 +515,7 @@ while runner:
 
 
             print(value)
-            #servo(value)
+            servo(value)
 
     value = "00000000"
     pygame.display.update()
