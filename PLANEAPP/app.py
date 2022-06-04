@@ -100,7 +100,7 @@ PI = math.pi
 # Change true to enable arduino for app
 app_version = False
 # Change true to enable arduino for controller
-controller_version = False
+controller_version = True
 
 HLA = "00"
 VLA = "00"
@@ -127,7 +127,7 @@ b2 = pygame.transform.scale(b2, (760, 600))
 plane_art = pygame.image.load(r'PLANEAPP/images/plane.png')
 
 joy_button = pygame.image.load(r'PLANEAPP/images/joystick.png')
-joy_button = pygame.transform.scale(joy_button, (1100, 600))
+joy_button = pygame.transform.scale(joy_button, (940, 530))
 
 Ps4 = pygame.image.load(r'PLANEAPP/images/Ps4_Controller.png')
 Ps4 = pygame.transform.scale(Ps4, (730, 400))
@@ -196,7 +196,7 @@ if app_version:
 
 if controller_version:
     portName = "COM11"
-    arduinoData = serial.Serial(portName, 9600)
+    #arduinoData = serial.Serial(portName, 9600)
 
 # read serial output and store in variable
 
@@ -293,40 +293,40 @@ while runner:
             horizontal_left = int(HLA) - 10
         else: 
             horizontal_left = -int(HLA)
-        screen.blit(joy_button, (520 + horizontal_left,-57 + vertical_left))
+        screen.blit(joy_button, (600 + horizontal_left,-20 + vertical_left))
 
     if int(HRA) >= 0:
         if int(HRA) > 10:
             horizontal_right = int(HRA) - 10
         else: 
             horizontal_right = -int(HRA)
-        screen.blit(joy_button, (680 + horizontal_right, -57))
+        screen.blit(joy_button, (760 + horizontal_right, -20))
     
     
 
     if is_x == True:                            
-        screen.blit(x_button, (1256, 130+10))
+        screen.blit(x_button, (1256, 130+5))
     else:
         screen.blit(x_button, (1256, 130))
     is_x = False
 
     if is_circle == True:                            
-        screen.blit(circle_button, (1258, 130+10))
+        screen.blit(circle_button, (1258, 130+5))
     else:
         screen.blit(circle_button, (1258, 130))
     is_circle = False
 
     if is_triangle == True:                            
-        screen.blit(triangle_button, (1256, 130+10))
+        screen.blit(triangle_button, (1256, 130+5))
     else:
         screen.blit(triangle_button, (1256, 130))
     is_triangle = False
 
     if is_square == True:                            
-        screen.blit(square_button, (1254, 130+10))
+        screen.blit(square_button, (1254, 130+5))
     else:
         screen.blit(square_button, (1254, 130))
-    is_triangle = False
+    is_square = False
     #screen.blit(trigger, (865, 54))
     #trigger.fill((255, 255, 255, alpha))
 
@@ -423,12 +423,11 @@ while runner:
                 is_close = True
                 print("\nx")
 
-        if count % 2 == 1:
-            HLA = "00"
-            VLA = "00"
-            HRA = "00"
-            rt = "00"            
-            #add a heads up display saying in saftey mode
+        HLA = "00"
+        VLA = "00"
+        HRA = "00"
+        rt = "00"            
+        #add a heads up display saying in saftey mode
 
         if event.type == pygame.JOYBUTTONDOWN:
             if event.button == button_keys['circle']:
@@ -515,7 +514,7 @@ while runner:
 
 
             print(value)
-            servo(value)
+            #servo(value)
 
     value = "00000000"
     pygame.display.update()
