@@ -121,30 +121,24 @@ screen = pygame.display.set_mode((1500, 575))
 # These file paths will vary depeneding on where the images are downloaded
 
 pygame.display.set_caption("Plane Visualizer")
-icon = pygame.image.load(
-    r'globe.png')
+icon = pygame.image.load(r'globe.png')
 pygame.display.set_icon(icon)
 
-logo = pygame.image.load(
-    r'logo.png')
+logo = pygame.image.load(r'logo.png')
 logo = pygame.transform.scale(logo, (140, 120))
 
-b2 = pygame.image.load(
-    r'b2.png')
+b2 = pygame.image.load(r'b2.png')
 b2 = pygame.transform.scale(b2, (760, 600))
 
 plane_art = pygame.image.load(r'plane.png')
 
-joy_button = pygame.image.load(
-    r'joystick.png')
+joy_button = pygame.image.load(r'joystick.png')
 joy_button = pygame.transform.scale(joy_button, (700, 500))
 
-Ps4 = pygame.image.load(
-    r'PS4.png')
+Ps4 = pygame.image.load(r'Ps4_Controller.png')
 Ps4 = pygame.transform.scale(Ps4, (700, 500))
 
-trigger = pygame.image.load(
-    r'trigger.png').convert()
+trigger = pygame.image.load(r'trigger.png').convert()
 trigger = pygame.transform.scale(trigger, (700, 500))
 
 # trajectory_list
@@ -195,7 +189,7 @@ if app_version:
     ser = serial.Serial(portName, baudrate=9600, timeout=1)
 
 if controller_version:
-    portName = "COM4"
+    portName = "COM11"
     arduinoData = serial.Serial(portName, 9600)
 
 # read serial output and store in variable
@@ -500,6 +494,7 @@ while runner:
             print(value)
             servo(value)
 
+    value = "00000000"
     pygame.display.update()
 
 
