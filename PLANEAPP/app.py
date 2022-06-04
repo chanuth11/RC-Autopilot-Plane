@@ -6,32 +6,14 @@ import pygame
 import json
 import os
 import time
+#import serial
+
+# def servo(servoValues):
+#     if controller_version:
+#         arduinoData.write(str.encode(servoValues))
 
 
-# Constants and Global variables
-
-PI = math.pi
-# Change true to enable arduino for app
-app_version = False
-# Change true to enable arduino for controller
-controller_version = True
-HLA = "00"
-VLA = "00"
-HRA = "00"
-rt = "00"
-if app_version:
-    import serial
-
-if controller_version:
-    import serial
-
-
-def servo(servoValues):
-    if controller_version:
-        arduinoData.write(str.encode(servoValues))
-
-
-def int_finder(emptyAlpha, pos_x, pos_y):
+def int_finder(emptyAlphwidth_one, pos_x, pos_y):
     font = pygame.font.Font('freesansbold.ttf', 20)
     display = font.render(str(emptyAlpha[pos_x][pos_y]), True, (31, 28, 28))
     return screen.blit(display, ((pos_x * 30) + 35, (pos_y * 30) + 10))
@@ -73,7 +55,7 @@ def recieve_input(stringOutput):
 def meter(fill_till, pos_x, pos_y, surface):
     a = 120
     b = 25
-    pygame.draw.rect(surface, 'blue', (pos_x, pos_y, a, b))
+    pygame.draw.rect(surface, 'blue', (pos_x, pos_y, width_one, b))
     pygame.draw.rect(surface, 'green', (pos_x + 5, pos_y + 5, a - 10, b - 10))
     pygame.draw.rect(surface, (255, 255 - fill_till * 2, 0), (pos_x + 5, pos_y + 5, fill_till, 15))
 
@@ -112,6 +94,18 @@ def calcDist(latit1, longit1, lat2, lon2):
 
     return x * scale_graph, y * scale_graph, round(reqBear, 2), round(m, 2)
 
+
+# Constants and Global variables
+PI = math.pi
+# Change true to enable arduino for app
+app_version = False
+# Change true to enable arduino for controller
+controller_version = False
+
+HLA = "00"
+VLA = "00"
+HRA = "00"
+rt = "00"
 
 pygame.init()
 
@@ -214,6 +208,7 @@ count = 0
 
 f = open("control_values.txt", "a")
 is_close = False
+
 # Initializing Controller
 joysticks = []
 for i in range(pygame.joystick.get_count()):
@@ -237,6 +232,13 @@ playerX_change = 0
 playerX_change = 0
 playerY_change = 0
 is_x = False
+
+#position
+width_one = 525
+length = 685
+
+width_two = 30
+length_two = 40
 
 # game_loop
 runner = True
@@ -340,30 +342,24 @@ while runner:
 
     time_elapsed = format_time(round(time_elapsed, 1))
 
-    a = 525
-    b = 685
+    display_stat("Time Elpased:", width_one, width_two + length_two * 0)
+    display_stat(time_elapsed, length, width_two + length_two * 0)
 
-    a1 = 30
-    b1 = 40
+    display_stat("Average Velocity:", width_one, 70)
+    display_stat(velocity, length, 70)
 
-    display_stat("Time Elpased:", a, a1 + b1 * 0)
-    display_stat(time_elapsed, b, a1 + b1 * 0)
+    display_stat("Distance Traveled:", width_one, 110)
+    display_stat(distance_traveled, length, 110)
 
-    display_stat("Average Velocity:", a, 70)
-    display_stat(velocity, b, 70)
-
-    display_stat("Distance Traveled:", a, 110)
-    display_stat(distance_traveled, b, 110)
-
-    display_stat("Altitude:", a, 190)
-    display_stat(altitude, b, 190)
+    display_stat("Altitude:", width_one, 190)
+    display_stat(altitude, length, 190)
 
     if app_version:
-        display_stat("Distance Remaining:", a, 150)
-        display_stat(dis_remain, b, 150)
+        display_stat("Distance Remaining:", width_one, 150)
+        display_stat(dis_remain, length, 150)
 
-        display_stat("Bearing Angle:", a, 230)
-        display_stat(bearing, b, 230)
+        display_stat("Bearing Angle:", width_one, 230)
+        display_stat(bearing, length, 230)
 
     # prints trajectory. Stores coordinates for trajectory on line 135
     print_trajectory(trajectory)
@@ -376,13 +372,13 @@ while runner:
     #     checker += 3
     #     temp = [int(x_pos), int(y_pos)]
     #     trajectory.append(temp)
-    display_stat("Saftey Mode", a, 270)
+    display_stat("Saftey Mode", width_one, 270)
 
     if count % 2 == 1:
         #add a heads up display saying in saftey mode
-        display_stat("ON", b, 270)
+        display_stat("ON", length, 270)
     else:
-        display_stat("OFF", b, 270)
+        display_stat("OFF", length, 270)
 
 
     # Gaining PS4 Controller access
@@ -492,7 +488,7 @@ while runner:
 
 
             print(value)
-            servo(value)
+            #servo(value)
 
     value = "00000000"
     pygame.display.update()
