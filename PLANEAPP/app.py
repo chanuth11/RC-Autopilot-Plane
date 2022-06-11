@@ -9,7 +9,7 @@ import time
 import serial
 
 def servo(servoValues):
-    if controller_version:
+    if write_to_arduino:
         arduinoData.write(str.encode(servoValues))
 
 
@@ -100,7 +100,7 @@ PI = math.pi
 # Change true to enable arduino for app
 app_version = False
 # Change true to enable arduino for controller
-controller_version = True
+write_to_arduino = True
 
 HLA = "00"
 VLA = "00"
@@ -193,10 +193,18 @@ if app_version:
     # connecting serial to python
     portName = "/dev/cu.usbmodem14301"
     ser = serial.Serial(portName, baudrate=9600, timeout=1)
+width_one = 525
+length = 685
 
-if controller_version:
-    portName = "COM11"
-    #arduinoData = serial.Serial(portName, 9600)
+width_two = 30
+length_two = 40
+if write_to_arduino:
+    portName = "COM10"
+    try:
+        arduinoData = serial.Serial(portName, 9600)
+    except:
+        write_to_arduino = False
+        
 
 # read serial output and store in variable
 
@@ -268,6 +276,12 @@ while runner:
         y_pos = entry[1]
         bearing = entry[2]
         dis_remain = entry[3]
+
+    if (write_to_arduino == False):
+        print("not writing")
+        display_stat("Not wrting to Arduino:",0, 110)
+
+    display_stat("Not wrting to Arduino:",width_one, 110)
 
     t1 = time.time()
     time_elapsed = t1 - t0
@@ -514,7 +528,7 @@ while runner:
 
 
             print(value)
-            #servo(value)
+            servo(value)
 
     value = "00000000"
     pygame.display.update()
