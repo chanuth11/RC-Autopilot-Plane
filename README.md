@@ -22,10 +22,10 @@ Why we are doing this project: [Project Overview](https://docs.google.com/docume
 ](https://user-images.githubusercontent.com/57009205/189796373-c6020d33-431e-4b0d-8435-14c3c01bb45b.jpg)
 ![PXL_20220701_225503098 (1)](https://user-images.githubusercontent.com/57009205/189797735-d109453b-ba44-410f-817d-4daf81a0b999.jpg)
 
-  **Link to test flights**
+  **Link to test flights:**
  https://photos.app.goo.gl/6WHYiJE59ZRLMAGVA
  
-  **Older Videos**
+  **Older Videos:**
  https://youtube.com/playlist?list=PLy_OHsmgOxpecJcippoSOJ2Jgk2Bfz1kq
 ### Software
 
