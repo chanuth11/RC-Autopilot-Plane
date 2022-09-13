@@ -19,9 +19,14 @@ Progress: https://docs.google.com/document/d/124PLKt3WayUlCQaWhQOHeGj22U9F4H3z6G
  **Receiver Schematic**
 ![receiver schematic](https://user-images.githubusercontent.com/57009205/115151764-533e3600-a03c-11eb-8dd1-f1ec7b6fffcc.png)
 
- **New Wing Design**
+ **Current Design**
  
-![newdesign](https://user-images.githubusercontent.com/57009205/127687287-eb4fee48-6a85-4cea-a978-d29f71f33d39.png)
+![PXL_20220701_225441883 MP](https://user-images.githubusercontent.com/57009205/189796200-9de04ee4-6d16-4adb-977a-7f1310741dd3.jpg)
+![PXL_20220701_225522887 (1)](https://user-images.githubusercontent.com/57009205/189796354-98568f70-3896-477d-9f6b-9bb591d07503.jpg)
+![PXL_20220701_225617443 (1)](https://user-images.githubusercontent.com/57009205/189796364-6f06a90c-a462-47ae-b9e2-c8428246ccfb.jpg)
+![PXL_20220701_225544376](https://user-images.githubusercontent.com/57009205/189796367-afd2bce7-6475-4a72-abb7-942f10ed8fbd.jpg)
+![PXL_20220701_225535863![PXL_20220701_225503098 (1)](https://user-images.githubusercontent.com/57009205/189796380-2ac5f50f-b9e7-469d-af1d-ed20905978f7.jpg)
+](https://user-images.githubusercontent.com/57009205/189796373-c6020d33-431e-4b0d-8435-14c3c01bb45b.jpg)
 
 ### Software
 
