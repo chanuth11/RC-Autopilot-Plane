@@ -2,13 +2,6 @@
 
 Why we are doing this project: [Project Overview](https://docs.google.com/document/d/1GXb-hj0h31oRvuv6bn0ZbQ69HOYbUhehtujObRabfnY/edit?usp=sharing)
 
-## Videos and Current Progress: 
-
-Videos:
-https://youtube.com/playlist?list=PLy_OHsmgOxpecJcippoSOJ2Jgk2Bfz1kq
-
-Progress: https://docs.google.com/document/d/124PLKt3WayUlCQaWhQOHeGj22U9F4H3z6Gp6ViLzv4w/edit?usp=sharing
-
 ### Hardware
 
 |                     | Transmitter Components | Receiver Components |
@@ -31,6 +24,8 @@ Progress: https://docs.google.com/document/d/124PLKt3WayUlCQaWhQOHeGj22U9F4H3z6G
 
  **Link to test flights**
  https://photos.app.goo.gl/6WHYiJE59ZRLMAGVA
+ **Older Videos**
+ https://youtube.com/playlist?list=PLy_OHsmgOxpecJcippoSOJ2Jgk2Bfz1kq
 ### Software
 
 **Current Application:** https://www.dropbox.com/s/v0275ro6g6j7pxt/Plane_Visualizer_2021-07-11_18-41-11.mp4?dl=0
