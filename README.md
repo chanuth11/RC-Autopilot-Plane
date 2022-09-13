@@ -19,7 +19,7 @@ Progress: https://docs.google.com/document/d/124PLKt3WayUlCQaWhQOHeGj22U9F4H3z6G
  **Receiver Schematic**
 ![receiver schematic](https://user-images.githubusercontent.com/57009205/115151764-533e3600-a03c-11eb-8dd1-f1ec7b6fffcc.png)
 
- ###Current Design
+ ### Current Design
  
 ![PXL_20220701_225441883 MP](https://user-images.githubusercontent.com/57009205/189796200-9de04ee4-6d16-4adb-977a-7f1310741dd3.jpg)
 ![PXL_20220701_225522887 (1)](https://user-images.githubusercontent.com/57009205/189796354-98568f70-3896-477d-9f6b-9bb591d07503.jpg)
@@ -27,10 +27,10 @@ Progress: https://docs.google.com/document/d/124PLKt3WayUlCQaWhQOHeGj22U9F4H3z6G
 ![PXL_20220701_225544376](https://user-images.githubusercontent.com/57009205/189796367-afd2bce7-6475-4a72-abb7-942f10ed8fbd.jpg)
 ![PXL_20220701_225535863![PXL_20220701_225503098 (1)](https://user-images.githubusercontent.com/57009205/189796380-2ac5f50f-b9e7-469d-af1d-ed20905978f7.jpg)
 ](https://user-images.githubusercontent.com/57009205/189796373-c6020d33-431e-4b0d-8435-14c3c01bb45b.jpg)
+![Uploading PXL_20220701_225503098 (1).jpg…]()
 
  **Link to test flights**
- [![PXL_20220701_225441883 MP](https://user-images.githubusercontent.com/57009205/189796200-9de04ee4-6d16-4adb-977a-7f1310741dd3.jpg)
-](https://photos.app.goo.gl/6WHYiJE59ZRLMAGVA)
+ https://photos.app.goo.gl/6WHYiJE59ZRLMAGVA
 ### Software
 
 **Current Application:** https://www.dropbox.com/s/v0275ro6g6j7pxt/Plane_Visualizer_2021-07-11_18-41-11.mp4?dl=0
