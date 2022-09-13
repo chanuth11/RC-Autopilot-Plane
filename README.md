@@ -27,7 +27,7 @@ Progress: https://docs.google.com/document/d/124PLKt3WayUlCQaWhQOHeGj22U9F4H3z6G
 ![PXL_20220701_225544376](https://user-images.githubusercontent.com/57009205/189796367-afd2bce7-6475-4a72-abb7-942f10ed8fbd.jpg)
 ![PXL_20220701_225535863![PXL_20220701_225503098 (1)](https://user-images.githubusercontent.com/57009205/189796380-2ac5f50f-b9e7-469d-af1d-ed20905978f7.jpg)
 ](https://user-images.githubusercontent.com/57009205/189796373-c6020d33-431e-4b0d-8435-14c3c01bb45b.jpg)
-![Uploading PXL_20220701_225503098 (1).jpg…]()
+![PXL_20220701_225503098 (1)](https://user-images.githubusercontent.com/57009205/189797735-d109453b-ba44-410f-817d-4daf81a0b999.jpg)
 
  **Link to test flights**
  https://photos.app.goo.gl/6WHYiJE59ZRLMAGVA
